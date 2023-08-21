@@ -9,8 +9,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "data")
 public class Terrorist implements Comparable<Terrorist>, Serializable {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
