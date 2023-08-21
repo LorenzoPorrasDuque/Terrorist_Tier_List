@@ -27,6 +27,7 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     public Long getId() {
         return id;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -40,7 +41,12 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     }
 
     @Override
-    public int compareTo(Terrorist o) {
-        return 0;
+    public int compareTo(Terrorist e) {
+        // TODO Auto-generated method stub
+        if (this.getKills() > e.getKills()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }

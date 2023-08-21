@@ -28,7 +28,7 @@ public class TerroristService implements ITerroristService {
     }
 
     @Override
-    public Terrorist save(Terrorist anime) {
-        return TerroristDAO.save(anime);
+    public Terrorist save(Terrorist terrorist) {
+        return TerroristDAO.save(terrorist);
     }
 }
