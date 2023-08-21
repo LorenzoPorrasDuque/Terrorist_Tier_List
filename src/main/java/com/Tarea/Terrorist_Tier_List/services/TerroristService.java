@@ -16,4 +16,19 @@ public class TerroristService implements ITerroristService {
     public List<Terrorist> findAll() {
         return TerroristDAO.findAll();
     }
+
+    @Override
+    public Terrorist findById(Long id) {
+        return TerroristDAO.findById(id).orElse(null);
+    }
+
+    @Override
+    public void delete(Long id) {
+        TerroristDAO.deleteById(id);
+    }
+
+    @Override
+    public Terrorist save(Terrorist anime) {
+        return TerroristDAO.save(anime);
+    }
 }

@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Table(name = "data")
 public class Terrorist implements Comparable<Terrorist>, Serializable {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,6 +24,9 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Column
     private double calificacion;
 
+    public Long getId() {
+        return id;
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
