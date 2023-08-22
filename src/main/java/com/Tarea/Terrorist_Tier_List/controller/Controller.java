@@ -67,14 +67,14 @@ public class Controller {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void update(@PathVariable Long id, @RequestBody Terrorist terrorist) {
+    public Terrorist update(@PathVariable Long id, @RequestBody Terrorist terrorist) {
         Terrorist actual = terroristService.findById(id);
         if (actual != null) {
             actual.setNombre(terrorist.getNombre());
             actual.setKills(terrorist.getKills());
             actual.setCalificacion(terrorist.getCalificacion());
         }
-        terroristService.save(actual);
+        return terroristService.save(actual);
     }
 
 
