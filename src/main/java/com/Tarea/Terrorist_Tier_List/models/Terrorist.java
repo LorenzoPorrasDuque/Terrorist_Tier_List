@@ -2,6 +2,7 @@ package com.Tarea.Terrorist_Tier_List.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -41,10 +42,6 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Override
     public int compareTo(Terrorist e) {
         // TODO Auto-generated method stub
-        if (this.getKills() > e.getKills()) {
-            return 1;
-        } else {
-            return -1;
-        }
+        return this.getKills()-e.getKills();
     }
 }
