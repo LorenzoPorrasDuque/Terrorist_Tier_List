@@ -5,43 +5,52 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 @Table(name = "data")
 public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Id
+    @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Getter
+    @Setter
     @Column
     private String nombre;
     @Getter
+    @Setter
     @Column
     private int kills;
     @Getter
+    @Setter
     @Column
     private double calificacion;
+
 
     public Long getId() {
         return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setKills(int kills) {
-        this.kills = kills;
+    public int getKills() {
+        return kills;
     }
 
-    public void setCalificacion(double calificacion) {
-        this.calificacion = calificacion;
+    public double getCalificacion() {
+        return calificacion;
     }
+
 
     @Override
     public int compareTo(Terrorist e) {
         // TODO Auto-generated method stub
-        return this.getKills()-e.getKills();
+        return this.getKills() - e.getKills();
     }
+
 }
