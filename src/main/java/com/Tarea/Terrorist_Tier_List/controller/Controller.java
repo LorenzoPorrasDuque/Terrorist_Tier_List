@@ -10,10 +10,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/terrorist")
@@ -23,7 +20,9 @@ public class Controller {
 
     @GetMapping("/lista")
     public List<Terrorist> terroristList() {
-        return terroristService.findAll();
+        List<Terrorist> lista = terroristService.findAll();
+        lista.sort(Comparator.comparing(Terrorist::getKills).reversed());
+        return lista;
     }
 
     @GetMapping("/lista/{id}")
@@ -76,6 +75,4 @@ public class Controller {
         }
         return terroristService.save(actual);
     }
-
-
 }

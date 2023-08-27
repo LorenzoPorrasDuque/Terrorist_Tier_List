@@ -15,6 +15,7 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Id
     @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( unique = true, nullable = true)
     private Long id;
     @Getter
     @Setter
@@ -28,24 +29,6 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Setter
     @Column
     private double calificacion;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getKills() {
-        return kills;
-    }
-
-    public double getCalificacion() {
-        return calificacion;
-    }
-
 
     @Override
     public int compareTo(Terrorist e) {
