@@ -8,14 +8,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 @Table(name = "data")
 public class Terrorist implements Comparable<Terrorist>, Serializable {
     @Id
     @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( unique = true, nullable = true)
     private Long id;
     @Getter
     @Setter
@@ -35,5 +33,4 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
         // TODO Auto-generated method stub
         return this.getKills() - e.getKills();
     }
-
 }
