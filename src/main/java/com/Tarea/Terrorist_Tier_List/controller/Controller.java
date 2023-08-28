@@ -21,7 +21,7 @@ public class Controller {
     @GetMapping("/lista")
     public List<Terrorist> terroristList() {
         List<Terrorist> lista = terroristService.findAll();
-        lista.sort(Comparator.comparing(Terrorist::getKills).reversed());
+        lista.sort(Comparator.comparing(Terrorist::getKills));
         return lista;
     }
 
