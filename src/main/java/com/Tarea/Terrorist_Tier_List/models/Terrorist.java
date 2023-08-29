@@ -1,5 +1,6 @@
 package com.Tarea.Terrorist_Tier_List.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,4 +32,5 @@ public class Terrorist implements Comparable<Terrorist>, Serializable {
         // TODO Auto-generated method stub
         return this.getKills() - e.getKills();
     }
+
 }
