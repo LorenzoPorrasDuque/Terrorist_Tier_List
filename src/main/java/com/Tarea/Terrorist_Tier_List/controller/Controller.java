@@ -30,7 +30,7 @@ public class Controller {
         Terrorist terrorist = terroristService.findById(id);
         Map<String, String> respone = new HashMap<>();
         if (terrorist == null) {
-            respone.put("Mensaje", "El anime con id " + id + " no existe");
+            respone.put("Mensaje", "El terrorista con id " + id + " no existe");
             return new ResponseEntity<Map<String, String>>(respone, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Terrorist>(terrorist, HttpStatus.OK);
