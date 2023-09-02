@@ -17,7 +17,6 @@
         <java.version>20</java.version>
     </properties>
     <dependencies>
-9k
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
